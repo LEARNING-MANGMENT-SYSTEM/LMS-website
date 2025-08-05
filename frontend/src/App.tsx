@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { RouterProvider } from "react-router-dom";
+import routes from "./components/Navigation/Routes";
+import Layout from "./components/Navigation/Layout";
+
 function App() {
+
+
   const [message, setMessage] = useState<string>('Loading...');
 
   useEffect(() => {
@@ -17,12 +23,19 @@ function App() {
   }, []);
 
   return (
+  
+    <>
     <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
-      <h1>React + TypeScript Learning Platform</h1>
-      <p>Message from server:</p>
-      <pre>{message}</pre>
+    <h1>React + TypeScript Learning Platform</h1>
+    <p>Message from server:</p>
+    <pre>{message}</pre>
     </div>
-  );
-}
+    <RouterProvider router={routes} />
+    <Layout/>
+    
 
-export default App;
+    
+    </>
+
+  )}
+  export default App
