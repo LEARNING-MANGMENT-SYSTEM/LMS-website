@@ -9,7 +9,8 @@ import About from "../../pages/About.tsx";
 import Contact from "../../pages/Contact.tsx";
 import Courses from "../../pages/Courses.tsx";
 import SignIn from "../../pages/SignIn.tsx";
-import Layout from "./Layout.tsx";
+import Layout from "../../Layout/index.tsx";
+
 const routes = createBrowserRouter([
   {
     path: "/",

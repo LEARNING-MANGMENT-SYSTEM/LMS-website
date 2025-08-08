@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { RouterProvider } from "react-router-dom";
 import routes from "./components/Navigation/Routes";
-import Layout from "./components/Navigation/Layout";
+import Layout from './Layout';
+
+
 
 function App() {
 
@@ -32,7 +34,6 @@ function App() {
     </div>
     <RouterProvider router={routes} />
     <Layout/>
-    
 
     
     </>
