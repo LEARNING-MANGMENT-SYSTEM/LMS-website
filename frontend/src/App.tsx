@@ -1,4 +1,3 @@
-import Input from "./components/UI/Input";
 import { RouterProvider } from "react-router-dom";
 import routes from "./components/Navigation/Routes";
 

@@ -26,12 +26,12 @@ const Input = ({
 
   console.log(error, success, inputStyle);
   return (
-    <div>
+    <div className="flex-1">
       {label && <label className="my-2 block">{label}</label>}
       <div className={`${countainerStyle} flex relative`}>
-        {rightIcon && <div className={iconsStyle}> {rightIcon}</div>}
+        {leftIcon && <div className={iconsStyle}> {leftIcon}</div>}
         <input {...rest} className={inputStyle} />
-        {!success && leftIcon && <div className={`${iconsStyle} right-0`}>{leftIcon}</div>}
+        {!success && rightIcon && <div className={`${iconsStyle} right-0`}>{rightIcon}</div>}
         {success && <img src={sucessIcon} className="absolute right-0 p-2.5"/>}
       </div>
       {error &&<p className="text-red-500">{errorText}</p>}

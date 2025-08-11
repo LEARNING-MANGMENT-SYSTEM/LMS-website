@@ -2,9 +2,10 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 interface props {
   options: string[];
+  containerStyle?:string;
   handleChange: (param: string) => void;
 }
-const Select = ({ options, handleChange }: props) => {
+const Select = ({ options,containerStyle, handleChange }: props) => {
   const [selected, setSelected] = useState(options[0]);
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen=()=>setIsOpen((prev)=>!prev)
@@ -15,9 +16,9 @@ const Select = ({ options, handleChange }: props) => {
   };
   return (
     <>
-      <div className="md:w-64 w-35 relative inline-block">
+      <div className={`w-35 relative inline-block ${containerStyle}`}>
         <button
-          className=" border-2 border-gray-200 flex px-5 py-2.5 justify-between w-full "
+          className=" border-2 border-gray-200 flex px-5 py-2 justify-between w-full "
           onClick={toggleOpen}
         >
           {selected}
