@@ -4,7 +4,8 @@ import Button from "../UI/Button";
 import { Bell, Heart, ShoppingCart } from "lucide-react";
 import { IconBadge } from "../UI/badge";
 import { Avatar } from "../UI/Avatar";
-import Logo from "./Logo";
+import Logo from "../UI/Logo";
+
 
 function Header() {
   return (
