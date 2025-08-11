@@ -1,9 +1,9 @@
-import SearchInput from "../UI/SearchInput";
+import SearchInput from "../../components/UI/SearchInput";
 import { useLocation } from "react-router-dom";
 
 import { Bell } from "lucide-react";
-import { IconBadge } from "../UI/badge";
-import { Avatar } from "../UI/Avatar";
+import { IconBadge } from "../../components/UI/badge";
+import { Avatar } from "../../components/UI/Avatar";
 
 function DashboardHeader() {
   const location = useLocation();
