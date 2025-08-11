@@ -3,6 +3,6 @@
     { name: "Courses", path: "/courses" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
-    { name: "Become an Instructor", path: "/instructor" },
+    { name: "Become an Instructor", path: "/becomeInstructor" },
   ];
   export default navlinks
