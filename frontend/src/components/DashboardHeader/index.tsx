@@ -16,7 +16,7 @@ function DashboardHeader() {
         <h1 className="font-bold text-3xl">
           {" "}
           {routeName
-            .replace(/-/g, " ")
+            .replace(/([A-Z])/g, ' $1')
             .replace(/\b\w/g, (char) => char.toUpperCase())}
         </h1>
       </div>
