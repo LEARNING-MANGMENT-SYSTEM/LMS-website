@@ -1,11 +1,10 @@
-import SearchInput from "../UI/SearchInput";
-import Select from "../UI/Select";
-import Button from "../UI/Button";
+import SearchInput from "../../components/UI/SearchInput";
+import Select from "../../components/UI/Select";
+import Button from "../../components/UI/Button";
 import { Bell, Heart, ShoppingCart } from "lucide-react";
-import { IconBadge } from "../UI/badge";
-import { Avatar } from "../UI/Avatar";
-import Logo from "../UI/Logo";
-
+import { IconBadge } from "../../components/UI/badge";
+import { Avatar } from "../../components/UI/Avatar";
+import Logo from "../../components/UI/Logo";
 
 function Header() {
   return (
