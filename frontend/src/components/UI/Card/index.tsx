@@ -4,7 +4,7 @@ interface props {
   media: string;
   content: ReactNode;
   footer: ReactNode;
-  fullwidth?: Boolean;
+  fullwidth?: boolean;
 }
 
 function Card({ media, content, footer, fullwidth = false }: props) {
