@@ -4,7 +4,7 @@ import { useMemo } from "react";
 interface props {
   currentPage: number;
   totalPages: number;
-  getPage: (page: number) => {};
+  getPage: (page: number) => void;
 }
 function Paginator({ currentPage, totalPages, getPage }: props) {
   const pages = useMemo(() => {

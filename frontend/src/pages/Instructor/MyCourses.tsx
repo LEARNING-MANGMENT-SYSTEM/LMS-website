@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import testImg from "../../assets/testImg.png";
 import CardList from "../../components/CardList";
 import Paginator from "../../components/UI/paginator";
+import SearchAndFilter from "../../components/searchAndFilter";
 const MyCourses = () => {
   const [page,setPage] = useState(2)
   const [totalPages , setTotalPages] = useState(10);
@@ -11,6 +12,7 @@ const MyCourses = () => {
   },[])
   return (
     <>
+    <SearchAndFilter/>
       <CardList
         cardsData={[1, 2, 6, 6, 8, 64, 8,1].map(() => ({
           imgSrc: testImg,

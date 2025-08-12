@@ -10,6 +10,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorText?: string;
   success?: boolean;
   countainerStyle?: string;
+  labelStyle?:string;
 
 
   validate?: (value: string) => boolean | Promise<boolean>;

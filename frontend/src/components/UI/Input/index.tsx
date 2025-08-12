@@ -10,6 +10,7 @@ const Input = ({
   errorText,
   success,
   countainerStyle,
+  labelStyle,
   //validate,
   ...rest
 }: InputProps) => {
@@ -20,14 +21,14 @@ const Input = ({
   else if (success) inputStyle += "border-green-500 bg-green-100";
   else
     inputStyle +=
-      "border-[#ddd] hover:border-[3px] hover:border-orange-100 focus:border-orange-500 focus:border-[1px]";
+      "border-gray-100 hover:border-[3px] hover:border-orange-100 focus:border-orange-500 focus:border-[1px]";
   if (leftIcon) inputStyle += " pl-10";
   if (rightIcon) inputStyle += " pr-10";
 
   console.log(error, success, inputStyle);
   return (
     <div className="flex-1">
-      {label && <label className="my-2 block">{label}</label>}
+      {label && <label className={`my-2 block ${labelStyle}`}>{label}</label>}
       <div className={`${countainerStyle} flex relative`}>
         {leftIcon && <div className={iconsStyle}> {leftIcon}</div>}
         <input {...rest} className={inputStyle} />

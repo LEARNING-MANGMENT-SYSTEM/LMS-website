@@ -18,7 +18,7 @@ const Select = ({ options,containerStyle, handleChange }: props) => {
     <>
       <div className={`w-35 relative inline-block ${containerStyle}`}>
         <button
-          className=" border-2 border-gray-200 flex px-5 py-2 justify-between w-full "
+          className=" border-2 border-gray-100 flex px-3 py-2 justify-between w-full "
           onClick={toggleOpen}
         >
           {selected}
