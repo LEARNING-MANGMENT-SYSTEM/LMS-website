@@ -1,7 +1,9 @@
+
 import { useEffect, useState } from 'react';
 import  Alert  from './componenet/ui/Alert';
 import Footer from './componenet/ui/footer';
-
+import { RouterProvider } from "react-router-dom";
+import routes from "./components/Navigation/Routes";
 function App() {
   const [message, setMessage] = useState<string>('Loading...');
   const [alerts, setAlerts] = useState([
@@ -15,21 +17,14 @@ function App() {
     setAlerts(alerts.filter(alert => alert.id !== id));
   };
 
-  useEffect(() => {
-    // Replace with your actual backend URL if it's not localhost:5000
-    fetch('http://localhost:5000/')
-      .then((res) => res.text())
-      .then((data) => {
-        setMessage(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setMessage('Failed to fetch message from server');
-      });
-  }, []);
+
+
+function App() {
+
 
 return (
   <>
+        <RouterProvider router={routes} />
     <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
       <h1>React + TypeScript Learning Platform</h1>
       <p>Message from server:</p>
@@ -57,6 +52,12 @@ return (
     <Footer/>
   </>
 );
+
+
+    
+  
 }
 
-export default App;
+
+  
+  export default App
