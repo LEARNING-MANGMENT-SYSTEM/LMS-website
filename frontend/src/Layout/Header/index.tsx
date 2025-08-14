@@ -14,8 +14,9 @@ function Header() {
         <div className="md:flex gap-2 flex-1 hidden">
           <Select
             options={["browse"]}
-            handleChange={() => {}}
+            placeholder="Browse"
             containerStyle="w-40 "
+            handleChange={()=>{}}
           />
           <SearchInput
             placeholder="What do you want to learn..."

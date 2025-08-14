@@ -11,7 +11,7 @@ const Layout = () => {
     <>
       {isInstructor ? (
         <div className="grid grid-cols-12">
-          <div className="col-span-2 bg-emerald-950">
+          <div className="col-span-2 bg-blue-950">
             <SideBar />
           </div>
           <div className="col-span-10">
