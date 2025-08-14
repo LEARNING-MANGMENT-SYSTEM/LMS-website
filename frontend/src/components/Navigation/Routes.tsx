@@ -8,12 +8,16 @@ import Courses from "../../pages/Courses/Courses.tsx";
 import SignIn from "../../pages/SignIn/SignIn.tsx";
 import Layout from "../../Layout/index.tsx";
 import Dashboard from "../../pages/Instructor/Dashboard.tsx";
-import CreateNewCourses from "../../pages/Instructor/CreateNewCourses.tsx";
 import MyCourses from "../../pages/Instructor/MyCourses.tsx";
 import Earning from "../../pages/Instructor/Earning.tsx";
 import Message from "../../pages/Instructor/Message.tsx";
 import SignOut from "../../pages/Instructor/SignOut.tsx";
 import Settings from "../../pages/Instructor/Settings.tsx";
+import BasicInformation from "../../pages/Instructor/createNewCourse/BasicInformation.tsx";
+import AdvancedInformation from "../../pages/Instructor/createNewCourse/AdvancedInformation.tsx";
+import Curriculum from "../../pages/Instructor/createNewCourse/Curriculum.tsx";
+import PublishCourse from "../../pages/Instructor/createNewCourse/PublishCourse.tsx";
+import CreateNewCourse from "../../pages/Instructor/createNewCourse/index.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -24,7 +28,12 @@ const routes = createBrowserRouter([
       { path: "/students", element: <Students /> },
 
       { path: "/instructor/dashboard", element: <Dashboard /> },
-      {path: "/instructor/createNewCourses",element: <CreateNewCourses />,  },
+      {path: "/instructor/createNewCourses",element: <CreateNewCourse />,children:[
+        {index:true,element:<BasicInformation/>},
+        {path:"/instructor/createNewCourses/advancedInfo",element:<AdvancedInformation/>},
+        {path:"/instructor/createNewCourses/curriculum",element:<Curriculum/>},
+        {path:"/instructor/createNewCourses/publishCourse",element:<PublishCourse/>},
+      ]  },
       { path: "/instructor/myCourses", element: <MyCourses /> },
       { path: "/instructor/earning", element: <Earning /> },
       { path: "/instructor/message", element: <Message /> },
