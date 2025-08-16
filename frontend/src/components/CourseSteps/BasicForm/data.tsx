@@ -170,6 +170,9 @@ export const courseLevels: string[] = [
 
 
 export const courseDurations: string[] = [
+  "Day",
+  "week",
+  "Month",
   "Less than 1 hour",
   "1–3 hours",
   "3–6 hours",

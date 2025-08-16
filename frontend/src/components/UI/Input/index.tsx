@@ -22,8 +22,8 @@ const Input = ({
   else
     inputStyle +=
       "border-gray-100 hover:border-[3px] hover:border-orange-100 focus:border-orange-500 focus:border-[1px]";
-  if (leftIcon) inputStyle += " pl-10";
-  if (rightIcon) inputStyle += " pr-10";
+  if (leftIcon) inputStyle += " pl-15";
+  if (rightIcon) inputStyle += " pr-15";
 
   console.log(error, success, inputStyle);
   return (

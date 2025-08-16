@@ -34,7 +34,7 @@ const Select = ({
       <div className={` relative inline-block ${containerStyle}`}>
         {label && <label className="my-2 block">{label}</label>}
         <button
-          className={`border-2 border-gray-200 flex px-5 py-2 justify-between w-full ${
+          className={`border-1 border-gray-100 flex px-5 py-2 justify-between w-full ${
             placeholder ? "text-gray-400" : ""
           }`}
           onClick={toggleOpen}
