@@ -12,6 +12,7 @@ import {
 import { defaultValues, type props } from "./props";
 import { useNavigate } from "react-router-dom";
 import InputWithSelect from "../../UI/InputWithSelect/Index";
+import InputWithLimit from "../../UI/InputWithLimit";
 
 const BasicForm = ({ initialValues = defaultValues }: props) => {
   const [title, setTitle] = useState(initialValues.title);
@@ -133,7 +134,6 @@ const BasicForm = ({ initialValues = defaultValues }: props) => {
             options={courseDurations}
           />
         </div>
-
         <div className="flex justify-between p-5">
           <Button variant={"text"} onclick={handleDelete}>
             Cancel
