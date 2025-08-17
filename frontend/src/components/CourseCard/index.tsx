@@ -1,6 +1,7 @@
 import Card from "../UI/Card";
 import type { Course } from "../../types/Course";
 import { MoreHorizontal, Star, User } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 export default function CourseCard({
   imgSrc,
@@ -10,16 +11,25 @@ export default function CourseCard({
   students,
   price,
 }: Course) {
+  const path = useLocation();
+  const isInstructor = path.pathname.includes("instructor");
   return (
     <Card
       media={imgSrc}
       content={
         <div className="p-3">
-          {categories.map((cat) => (
-            <span className="bg-indigo-100 py-1 px-2 text-indigo-700 text-[12px]">
-              {cat}
-            </span>
-          ))}
+          <div className="flex justify-between">
+            <div>
+              {categories.map((cat) => (
+                <span className="bg-indigo-100 py-1 px-2 text-indigo-700 text-[12px]">
+                  {cat}
+                </span>
+              ))}
+            </div>
+            {!isInstructor && (
+              <p className="text-orange-500 text-2xl">${price}</p>
+            )}
+          </div>
           <h3 className="font-semibold text-xl mt-1 capitalize">{title}</h3>
         </div>
       }
@@ -38,12 +48,16 @@ export default function CourseCard({
               </p>
             </div>
           </div>
-          <hr className="text-gray-100" />
+          {isInstructor && (
+            <>
+              <hr className="text-gray-100" />
 
-          <div className="flex justify-between p-3 items-center">
-            <p className="text-orange-500 text-2xl">${price}</p>
-            <MoreHorizontal size={24} color="#999" />
-          </div>
+              <div className="flex justify-between p-3 items-center">
+                <p className="text-orange-500 text-2xl">${price}</p>
+                <MoreHorizontal size={24} color="#999" />
+              </div>
+            </>
+          )}
         </div>
       }
     />

@@ -2,9 +2,8 @@ import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import type { props } from "./props";
 
-const Dropdown = ({ title, options, isSubMenu, handleOption }: props) => {
+const Dropdown = ({ title, options, isSubMenu, handleOption , subMenuDirection = "right" }: props) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleOpen = () => setIsOpen((prev) => !prev);
 
   const handleClick = (option: string) => {
@@ -26,7 +25,7 @@ const Dropdown = ({ title, options, isSubMenu, handleOption }: props) => {
       >
         <div>{title}</div>
         <div>
-          {isSubMenu ? (
+          {isSubMenu && subMenuDirection !== "down" ? (
             <ChevronRight />
           ) : isOpen ? (
             <ChevronUp />
@@ -40,7 +39,7 @@ const Dropdown = ({ title, options, isSubMenu, handleOption }: props) => {
         <ul
           role="menu"
           className={`${
-            isSubMenu ? "absolute left-full top-0 w-60" : ""
+            isSubMenu && subMenuDirection == 'right'? "absolute left-full top-0 w-60" : ""
           } shadow border border-gray-100 mt-2 bg-white`}
         >
           {options.map((option, index) =>
@@ -50,6 +49,7 @@ const Dropdown = ({ title, options, isSubMenu, handleOption }: props) => {
                 title={option.value}
                 options={option.children}
                 handleOption={handleOption}
+                subMenuDirection={subMenuDirection}
                 isSubMenu={true}
               />
             ) : (
