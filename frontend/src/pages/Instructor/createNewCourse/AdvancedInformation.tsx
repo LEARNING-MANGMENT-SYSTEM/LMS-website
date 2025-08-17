@@ -1,8 +1,17 @@
 
+import AdvancedForm from "../../../components/CourseSteps/AdvancedForm"
+import CourseHeader from "../../../components/CourseSteps/Header"
+
+
 
 const AdvancedInformation = () => {
+
   return (
-    <div>AdvancedInformation</div>
+    
+    <div >
+      <CourseHeader title="Advance Information"/>
+      <AdvancedForm />
+    </div>
   )
 }
 
