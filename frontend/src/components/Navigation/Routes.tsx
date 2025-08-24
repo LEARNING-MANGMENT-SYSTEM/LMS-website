@@ -24,6 +24,8 @@ import PurchaseHistory from "../../pages/StdDashboard/purchaseHistory.tsx";
 import Teachers from "../../pages/StdDashboard/teachers.tsx";
 import StdDashboard from "../../pages/StdDashboard/StdDashboard.tsx";
 import StdDashBoard from "../../pages/StdDashboard/index.tsx";
+import CourseDetail from "../../pages/Courses/CourseDetails.tsx";
+import LessonDetail from "../../pages/Courses/LessonDetails.tsx";
 
 const routes = createBrowserRouter([
   {
@@ -94,6 +96,8 @@ const routes = createBrowserRouter([
       { path: "/instructor/message", element: <Message /> },
       { path: "/instructor/settings", element: <Settings /> },
       { path: "/instructor/signOut", element: <SignOut /> },
+      { path: "/courses/:courseId", element: <CourseDetail /> },
+      { path: "/lessons/:lessonId", element: <LessonDetail /> },
 
       { path: "/About", element: <About /> },
       { path: "/contact", element: <Contact /> },
