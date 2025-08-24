@@ -15,7 +15,7 @@ function Button({variant ="primary",children,padding = "px-6 py-3",className,typ
     <button
       onClick={onclick}
       type={type}
-      className={`${padding} ${variantClasses[variant]} font-medium  w-auto flex flex-row gap-4 ${className}`}
+      className={`${padding} ${variantClasses[variant]} font-medium  w-auto flex flex-row gap-4 ${className} cursor-pointer`}
     >
       {children}
     </button>
