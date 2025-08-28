@@ -7,11 +7,14 @@ const MyCourses = () => {
   const [page,setPage] = useState(2)
   const [totalPages , setTotalPages] = useState(10);
 
+
   const getPage = useCallback((page:number)=>{
     setPage(page);
   },[])
   return (
     <>
+   
+
     <SearchAndFilter/>
       <CardList
         cardsData={[1, 2, 6, 6, 8, 64, 8,1].map(() => ({

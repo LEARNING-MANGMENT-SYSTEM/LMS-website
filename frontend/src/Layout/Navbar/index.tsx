@@ -10,7 +10,7 @@ const Navbar = () => {
           {
             navlinks.map((link)=>(
               
-                <NavLink to={link.path}>
+                <NavLink to={link.path} key={link.path}>
               {
                 ({isActive})=>(
                     <li key={link.name} 

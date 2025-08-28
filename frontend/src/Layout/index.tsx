@@ -26,7 +26,7 @@ const Layout = () => {
         <>
           <Navbar />
           <Header />
-          <main className=" mx-auto w-full md:w-10/12">
+          <main className="mx-auto w-full lg:w-10/12">
             <Outlet />
           </main>
         </>
