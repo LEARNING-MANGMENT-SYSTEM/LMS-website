@@ -13,7 +13,7 @@ function TabNavigator({ options, activeId = options[0].sectionId }: props) {
           <a
             key={sectionId}
             href={`#${sectionId}`}
-            className={`px-5 py-3 flex-1 ${
+            className={`px-5 py-3 flex-1 text-center ${
               activeId === sectionId ? "border-b-2 border-b-orange-500" : ""
             }`}
           >

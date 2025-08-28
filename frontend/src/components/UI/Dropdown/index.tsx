@@ -2,7 +2,7 @@ import { ChevronDown, ChevronRight, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import type { props } from "./props";
 
-const Dropdown = ({ title, options, isSubMenu, handleOption , subMenuDirection = "right" }: props) => {
+const Dropdown = ({ title, options, isSubMenu, handleOption , subMenuDirection = "right",classname }: props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen((prev) => !prev);
 
@@ -12,7 +12,7 @@ const Dropdown = ({ title, options, isSubMenu, handleOption , subMenuDirection =
   };
 
   return (
-    <div className="md:w-80 w-35 relative inline-block">
+    <div className={`md:w-80 w-35 relative inline-block ${classname}`}>
       <button
         aria-haspopup="true"
         aria-expanded={isOpen}
@@ -23,12 +23,12 @@ const Dropdown = ({ title, options, isSubMenu, handleOption , subMenuDirection =
         } px-4 py-2.5 flex justify-between w-full`}
         onClick={toggleOpen}
       >
-        <div>{title}</div>
+        <div className={isOpen?'text-orange-500':""}>{title}</div>
         <div>
           {isSubMenu && subMenuDirection !== "down" ? (
             <ChevronRight />
           ) : isOpen ? (
-            <ChevronUp />
+            <ChevronUp color="orange"/>
           ) : (
             <ChevronDown />
           )}

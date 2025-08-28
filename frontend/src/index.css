@@ -7,3 +7,8 @@ html {
 input {
   outline: none;
 }
+
+.clippedStar{
+  -webkit-mask: url('/star.svg') no-repeat center / contain;
+  mask: url('/star.svg') no-repeat center / contain;
+}

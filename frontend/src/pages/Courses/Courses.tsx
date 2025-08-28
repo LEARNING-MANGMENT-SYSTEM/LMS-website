@@ -15,7 +15,7 @@ const Courses = () => {
     setPage(page);
   }, []);
   return (
-    <main className="mx-auto md:w-10/12">
+    <div>
       <StdSearchAndFilter
         openFilter={openFilter}
         filtersCount={filters.length}
@@ -41,7 +41,7 @@ const Courses = () => {
           />
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
