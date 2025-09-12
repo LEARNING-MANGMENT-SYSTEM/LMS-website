@@ -7,6 +7,7 @@ interface props {
   label?: string;
   placeholder?: string;
   selectedValue?: string;
+  buttonStyle?:string;
 }
 const Select = ({
   options,
@@ -15,6 +16,7 @@ const Select = ({
   label,
   placeholder = "select...",
   selectedValue = "",
+  buttonStyle=""
 }: props) => {
   const [selected, setSelected] = useState(selectedValue);
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +36,9 @@ const Select = ({
       <div className={` relative inline-block ${containerStyle}`}>
         {label && <label className="my-2 block">{label}</label>}
         <button
-          className={`border-1 border-gray-100 flex px-5 py-2 justify-between w-full ${
-            placeholder ? "text-gray-400" : ""
-          }`}
+          className={`border-1 border-gray-100 flex px-5 py-2 justify-between w-full 
+            ${placeholder ? "text-gray-400" : ""}
+            ${buttonStyle}`}
           onClick={toggleOpen}
           type="button"
         >

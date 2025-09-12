@@ -1,7 +1,10 @@
+import PublishCourseForm from "../../../components/CourseSteps/PublishCourse"
 
 const PublishCourse = () => {
   return (
-    <div>PublishCourse</div>
+    <>
+    <PublishCourseForm/>
+    </>
   )
 }
 
