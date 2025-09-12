@@ -6,3 +6,10 @@ export interface Course{
   students: number;
   price: number;
 }
+
+export interface Lesson{
+  imgSrc:string;
+  progress:number;
+  course:string;
+  lesson:string;  
+}

@@ -15,13 +15,13 @@ const Courses = () => {
     setPage(page);
   }, []);
   return (
-    <main className="mx-auto md:w-10/12">
+    <>
       <StdSearchAndFilter
         openFilter={openFilter}
         filtersCount={filters.length}
         setOpenFilter={setOpenFilter}
       />
-      <div className="flex gap-10">
+      <div className="flex gap-10 justify-center">
         {openFilter && <Filters />}
         <div>
           <CardList
@@ -41,7 +41,7 @@ const Courses = () => {
           />
         </div>
       </div>
-    </main>
+    </>
   );
 };
 

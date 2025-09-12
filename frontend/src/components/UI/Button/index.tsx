@@ -16,8 +16,10 @@ function Button({variant ="primary",children,padding = "px-6 py-3",className,typ
     <button
       onClick={onclick}
       type={type}
+
       disabled={isDisabled}
       className={`${padding}  ${isDisabled ? "bg-orange-600/20  text-white" : variantClasses[variant]} font-medium  w-auto flex flex-row gap-4 ${className}`}
+
     >
       {children}
     </button>
