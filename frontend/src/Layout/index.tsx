@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import DashboardHeader from "./DashboardHeader";
 import SideBar from "./SideBar";
+import Footer from "../components/UI/Footer";
 
 const Layout = () => {
   const Location = useLocation();
@@ -16,18 +17,21 @@ const Layout = () => {
           </div>
           <div className="col-span-10">
             <DashboardHeader />
-            <div className="bg-gray-100 px-20 py-5">
+            <main className="bg-gray-100 px-20 py-5">
               <Outlet />
-            </div>
+            </main>
           </div>
         </div>
       ) : (
         <>
           <Navbar />
           <Header />
-          <Outlet />
+          <main className="mx-auto w-full lg:w-10/12">
+            <Outlet />
+          </main>
         </>
       )}
+      <Footer />
     </>
   );
 };

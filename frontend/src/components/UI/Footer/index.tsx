@@ -14,7 +14,7 @@ const Footer = () => {
 
   const languages = ["English", "French", "Spanish", "German"];
   return (
-    <footer className="bg-black text-white p-8 w-full">
+    <footer className="bg-black text-white p-8 w-full mt-30">
       {/* First Section */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
         <div className="flex-1">

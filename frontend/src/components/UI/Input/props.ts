@@ -13,5 +13,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelStyle?:string;
 
 
+
   validate?: (value: string) => boolean | Promise<boolean>;
 }

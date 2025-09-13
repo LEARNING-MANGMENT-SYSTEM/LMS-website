@@ -1,8 +1,11 @@
+import CurriculumForm from "../../../components/CourseSteps/Curriculum"
 
 
 const Curriculum = () => {
   return (
-    <div>Curriculum</div>
+    <>
+    <CurriculumForm/>
+    </>
   )
 }
 

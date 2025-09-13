@@ -11,6 +11,7 @@ interface SectionProps {
     duration?: string;
     isExpandable?: boolean;
     defaultExpanded?: boolean;
+    ref?:any;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -21,8 +22,9 @@ const Section: React.FC<SectionProps> = ({
     lectureCount,
     className = '',
     duration,
-    isExpandable = true,
-    defaultExpanded = false
+    isExpandable = false,
+    defaultExpanded = false,
+    ref
 }) => {
     const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
     
@@ -33,7 +35,7 @@ const Section: React.FC<SectionProps> = ({
     };
 
     return (
-        <div id={id} className={`bg-[#E96969] border-l-4 border-red-500  ${className}`}>
+        <div id={id} className={`  ${className}`} ref={ref}>
             <div 
                 className={`flex justify-between items-center p-4 ${isExpandable ? 'cursor-pointer ' : ''}`} 
                 onClick={isExpandable ? toggleExpand : undefined}
@@ -44,7 +46,7 @@ const Section: React.FC<SectionProps> = ({
                             {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                         </div>
                     )}
-                    <h3 className='text-red-600 font-medium'>{title}</h3>
+                    <h3 className='font-medium text-xl'>{title}</h3>
                 </div>
                 <div className='flex items-center gap-2 text-xs text-gray-600'>
                     {lectureCount && (

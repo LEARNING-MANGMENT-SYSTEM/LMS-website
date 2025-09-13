@@ -9,6 +9,7 @@ export interface props {
   title: string | React.ReactNode;
   options: dropDownOption[];
   isSubMenu?: boolean;
+  classname:string;
   subMenuDirection?:"down"|"right";
   handleOption: (param: string) => void;
 }
