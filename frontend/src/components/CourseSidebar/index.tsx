@@ -47,7 +47,7 @@ const CourseSidebar:React.FC<CoursePaymentProps> = ({
 // const [selectedOption,setSelectedOption]=useState<string>('')
 
   return <>
-   <div className="border border-gray-200 rounded-lg shadow-sm p-6 w-80 ml-auto">
+   <div className="border border-gray-200 rounded-lg shadow-sm p-6 max-w-100 ml-auto">
     <div className="mb-6">
       <div className="flex items-center gap-3 mb-2">
         <span className="text-3xl font-bold text-gray-900">${price.toFixed(2)}

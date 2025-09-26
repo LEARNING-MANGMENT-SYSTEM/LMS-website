@@ -14,12 +14,17 @@ import testImg from "../../assets/testImg.png";
 import CourseCard from "../../components/CourseCard";
 import ReactMarkdown from "react-markdown";
 import markdownComponents from "../../util/markdownComponet";
+import CourseDetailHeader from "../../components/CourseDetailHeader";
+import CourseSidebar from "../../components/CourseSidebar";
 
 const DummyData = {
+  img: testImg,
   title:
     "Complete Website Responsive Design: from Figma to Webflow to Website Design",
   subtitle:
     "3 in 1 Course: Learn to design websites with Figma, build with Webflow, and make a living freelancing.",
+  category: "Development",
+  subcategory: "Web Development",
   description: `It gives you a huge self-satisfaction when you look at your work and say, "I made this!". I love that feeling after I'm done working on something. When I lean back in my chair, look at the final result with a smile, and have this little "spark joy" moment. It's especially satisfying when I know I just made $5,000.
 
 Lol! And that's why I got into this field. Not for the love of Web Design, which I do now. But for the LIFESTYLE! There are many way one can achieve this lifestyle. This is my way. This is how I achieved a lifestyle I've been fantasizing about for five years. And I'm going to teach you the same. Often people think Web Design is complicated. That it needs some creative talent or knack for computers. Sure, a lot of people make it very complicated. Like most subjects taught in the university. Like most career paths.
@@ -245,9 +250,28 @@ export default function CourseDetail() {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-12  md:col-span-8">
-        <div className="bg-amber-300 h-90">
-          Course Detail Page for Course ID: {courseId}
-        </div>
+        <CourseDetailHeader
+          breadcrumbs={[
+            { label: "home", href: "/" },
+            {
+              label: courseData.category,
+              href: `$courses?category=${courseData.category}`,
+            },
+            {
+              label: courseData.subcategory,
+              href: `$courses?category=${courseData.category}+subcategory=${courseData.subcategory}`,
+            },
+          ]}
+          title={courseData.title}
+          subtitle={courseData.subtitle}
+          rating={avgRatings}
+          totalRatings={totalRatings}
+          instructors={courseData.instructors.map(({ name, imgSrc }) => ({
+            name,
+            avatar: imgSrc ?? testImg,
+          }))}
+          heroImage={courseData.img}
+        />
         <TabNavigator
           activeId={activeId}
           options={[
@@ -401,7 +425,28 @@ export default function CourseDetail() {
           </div>
         </Section>
       </div>
-      <div className="col-span-12 md:col-span-4"></div>
+      <div className="col-span-12 md:col-span-4 pl-3">
+        <CourseSidebar
+          price={49.99}
+          originalPrice={99.99}
+          discount={50}
+          duration="12h 30m"
+          level="Beginner"
+          studentsEnrolled="2,345"
+          language="English"
+          subtitles="English, Spanish"
+          courseIncludes={{
+            onDemandVideo: "12.5 hours",
+            moneyBackGuarantee: "30 days",
+            downloadableResources: "10 articles",
+            certificate: "Certificate of completion",
+            mobileAccess: true,
+            englishCaptions: true,
+            fullLifetime: true,
+            onlineAccess: true,
+          }}
+        />
+      </div>
     </div>
   );
 }

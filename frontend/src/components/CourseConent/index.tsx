@@ -12,7 +12,7 @@ const CourseContents: React.FC<CourseContentsProps> = ({
     children
 }) => {
     return (
-        <div className='w-2/5 mx-auto bg-white rounded-lg shadow-sm border border-gray-200'>
+        <div className='mx-auto bg-white rounded-lg shadow-sm border border-gray-200'>
             <div className='p-4 border-b border-gray-200 flex justify-between items-center'>
                 <h2 className='text-lg font-bold text-gray-800'>{title}</h2>
                 <div className='text-sm font-medium text-green-500'>

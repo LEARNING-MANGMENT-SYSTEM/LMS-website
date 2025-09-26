@@ -47,15 +47,15 @@ const CourseSection: React.FC<CourseSectionProps> = ({
                     <h3 className='text-gray-800 font-medium text-sm'>{title}</h3>
                 </div>
                 
-                <div className='flex items-center gap-4 text-xs text-gray-500'>
+                <div className='flex items-center gap-4 text-xs text-gray-500 '>
                     {lectureCount && (
-                        <div className='flex items-center gap-1'>
+                        <div className='hidden lg:flex items-center gap-1'>
                             <Play size={12} className='text-purple-500' />
                             <span>{lectureCount} lectures</span>
                         </div>
                     )}
                     {duration && (
-                        <div className='flex items-center gap-1'>
+                        <div className='hidden lg:flex items-center gap-1'>
                             <Clock size={12} className='text-orange-500' />
                             <span>{duration}</span>
                         </div>
