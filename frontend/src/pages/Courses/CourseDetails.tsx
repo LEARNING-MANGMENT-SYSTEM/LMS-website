@@ -140,13 +140,7 @@ Second, this is a Development course. But I don't teach you how to code. Because
         "Jane is a professional designer who has worked with startups and Fortune 500 companies. She teaches UI/UX principles, prototyping, and design systems with tools like Figma and Adobe XD.and Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis maxime beatae dignissimos minima officia nostrum aliquam, quidem dolor architecto voluptas ut dicta debitis nam sunt possimus incidunt. Molestiae, eveniet dolores!",
     },
   ],
-  ratings: {
-    5: 200,
-    4: 100,
-    3: 50,
-    2: 5,
-    1: 7,
-  },
+  ratings: [200, 100, 50, 5, 7],
   feedback: [
     {
       id: 1,
@@ -231,16 +225,14 @@ export default function CourseDetail() {
     instructorSection,
     reviewSection,
   ];
-  const totalRatings = Object.values(courseData.ratings).reduce(
+  console.log(courseId);
+  const totalRatings = courseData.ratings.reduce(
     (acc, rate) => (acc += rate),
     0
   );
   const avgRatings =
     Math.round(
-      (Object.entries(courseData.ratings).reduce(
-        (sum, [star, count]) => sum + Number(star) * count,
-        0
-      ) /
+      (courseData.ratings.reduce((sum, count, i) => sum + (i + 1) * count, 0) /
         totalRatings) *
         10
     ) / 10;
@@ -365,17 +357,15 @@ export default function CourseDetail() {
               <p className="mt-3"> Course Rating</p>
             </div>
             <div className="flex-1">
-              {Object.keys(courseData.ratings)
-                .reverse()
-                .map((star) => (
-                  <div className="flex items-center my-5" key={star}>
-                    <ReadOnlyRating rating={star} />
-                    <ProgressBar
-                      progress={courseData.ratings[star]}
-                      maxValue={totalRatings}
-                    />
-                  </div>
-                ))}
+              {courseData?.ratings.reverse().map((rating, star) => (
+                <div
+                  className="flex items-center my-5"
+                  key={`${star + 1} Star`}
+                >
+                  <ReadOnlyRating rating={star + 1} />
+                  <ProgressBar progress={rating} maxValue={totalRatings} />
+                </div>
+              ))}
             </div>
           </div>
         </Section>

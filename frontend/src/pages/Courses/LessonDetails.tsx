@@ -16,6 +16,7 @@ import CourseSection from "../../components/CourseSection";
 import Lesson from "../../components/Lesson";
 import VideoPlayer from "../../components/VideoPlayer";
 import { Avatar } from "../../components/UI/Avatar";
+import type Comment from "../../types/comment";
 const DummyData = {
   id: 1,
   sectionId: 1,
@@ -56,7 +57,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
         name: "Ronald Richards",
         avatar: "/path/to/avatar.jpg",
       },
-      timeAgo: "1 week ago",
+      datePosted: "1 week ago",
       text: "Maecenas risus tortor, tincidunt nec purus eu, gravida suscipit tortor.",
       replies: [],
     },
@@ -65,9 +66,8 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
       user: {
         name: "Kristin Watson",
         avatar: "/path/to/avatar.jpg",
-        role: "admin",
       },
-      timeAgo: "1 week ago",
+      datePosted: "1 week ago",
       text: "Nulla pellentesque leo vitae lorem hendrerit, sit amet elementum ipsum rutrum...",
       replies: [],
     },
@@ -77,7 +77,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
         name: "Cody Fisher",
         avatar: "/path/to/avatar.jpg",
       },
-      timeAgo: "1 week ago",
+      datePosted: "1 week ago",
       text: "Thank You so much sir, you’re a great mentor. 🔥🔥🔥",
       replies: [],
     },
@@ -87,7 +87,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
         name: "Guy Hawkins",
         avatar: "/path/to/avatar.jpg",
       },
-      timeAgo: "2 weeks ago",
+      datePosted: "2 weeks ago",
       text: "Thank you for your helpful video. May I ask what is the application use to demo the animation...",
       replies: [
         {
@@ -96,7 +96,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
             name: "author",
             avatar: "/path/to/avatar.jpg",
           },
-          timeAgo: "2 weeks ago",
+          datePosted: "2 weeks ago",
           text: "you are welcom it's xxx",
           replies: [],
         },
@@ -105,6 +105,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
   ],
   curriculum: [
     {
+      id:1,
       title: "Getting Started",
       lectures: [
         {
@@ -150,6 +151,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
       ],
     },
     {
+      id:2,
       title: "Secret of Good Design",
       lectures: [
         {
@@ -195,6 +197,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
       ],
     },
     {
+      id:3,
       title: "Practice Design Like an Artist",
       lectures: [
         {
@@ -240,6 +243,7 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
       ],
     },
     {
+      id:4,
       title: "Web Development (Webflow)",
       lectures: [
         {
@@ -286,14 +290,14 @@ Donec congue aliquam lorem nec congue. Suspendisse eu risus mattis, interdum ant
     },
   ],
 };
-function countComments(comments) {
+function countComments(comments:Comment[]) {
   let total = 0;
   const stack = [...comments];
 
   while (stack.length > 0) {
     const current = stack.pop();
     total += 1;
-    if (current.replies && current.replies.length > 0) {
+    if (current?.replies && current.replies.length > 0) {
       stack.push(...current.replies);
     }
   }
@@ -314,6 +318,7 @@ export default function LessonDetail() {
     attachmentsSection,
     commentsSection,
   ];
+  console.log("lessonId", lessonId);
   const activeId = useScrollSpy(refSections);
 
   return (
@@ -329,7 +334,7 @@ export default function LessonDetail() {
       />
       <div className="grid grid-cols-12">
         <div className="col-span-12 md:col-span-8">
-          <VideoPlayer poster={testImg} />
+          <VideoPlayer poster={testImg} videoUrl="."/>
           <div className="border-b border-gray-200 my-2">
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">
               {lessonData.curriculum
@@ -461,7 +466,7 @@ export default function LessonDetail() {
                 {lessonData.comments.map((comment, index) => (
                   <div className="h-50" key={index}>
                     {" "}
-                    comment component
+                    comment component{comment.text}
                   </div>
                 ))}
                 <Button variant="secondary">Load More</Button>
